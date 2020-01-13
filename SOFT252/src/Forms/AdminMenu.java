@@ -30,19 +30,30 @@ public class AdminMenu extends javax.swing.JFrame {
         lblAdminMenu = new javax.swing.JLabel();
         btnCreateAccount = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        btnRemoveAccount = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblAdminMenu.setText("Admin Menu");
 
-        btnCreateAccount.setText("Create Admin Account");
+        btnCreateAccount.setText("Create Account");
         btnCreateAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateAccountActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("Create a new Admin Account");
+        jLabel1.setText("Create a new Account (Doctor, Admin, Secretary)");
+
+        jLabel2.setText("Remove an Account");
+
+        btnRemoveAccount.setText("Remove Account");
+        btnRemoveAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveAccountActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,9 +63,12 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblAdminMenu)
-                    .addComponent(btnCreateAccount)
-                    .addComponent(jLabel1))
-                .addContainerGap(249, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnRemoveAccount, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCreateAccount, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(151, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -65,7 +79,11 @@ public class AdminMenu extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCreateAccount)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRemoveAccount)
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         pack();
@@ -75,11 +93,19 @@ public class AdminMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
 
             
-        Forms.CreateAdminAccount createNewAccount = new Forms.CreateAdminAccount();
+        Forms.CreateAccount createNewAccount = new Forms.CreateAccount();
         
         createNewAccount.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnCreateAccountActionPerformed
+
+    private void btnRemoveAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveAccountActionPerformed
+        // TODO add your handling code here:
+        
+        Forms.RemoveAccount removeAccount = new Forms.RemoveAccount();
+        removeAccount.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnRemoveAccountActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,7 +144,9 @@ public class AdminMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateAccount;
+    private javax.swing.JButton btnRemoveAccount;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAdminMenu;
     // End of variables declaration//GEN-END:variables
 }

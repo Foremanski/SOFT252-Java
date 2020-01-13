@@ -27,10 +27,14 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="lblAdminMenu" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCreateAccount" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="btnRemoveAccount" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnCreateAccount" alignment="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="249" max="32767" attributes="0"/>
+              <EmptySpace pref="151" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -43,7 +47,11 @@
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="btnCreateAccount" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="214" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="btnRemoveAccount" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="155" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -56,7 +64,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCreateAccount">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Create Admin Account"/>
+        <Property name="text" type="java.lang.String" value="Create Account"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateAccountActionPerformed"/>
@@ -64,8 +72,21 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Create a new Admin Account"/>
+        <Property name="text" type="java.lang.String" value="Create a new Account (Doctor, Admin, Secretary)"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Remove an Account"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnRemoveAccount">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Remove Account"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoveAccountActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

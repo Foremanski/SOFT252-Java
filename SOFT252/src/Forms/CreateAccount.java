@@ -9,12 +9,12 @@ package Forms;
  *
  * @author dforeman
  */
-public class CreateAdminAccount extends javax.swing.JFrame {
+public class CreateAccount extends javax.swing.JFrame {
 
     /**
      * Creates new form CreateAdminAccount
      */
-    public CreateAdminAccount() {
+    public CreateAccount() {
         initComponents();
     }
 
@@ -46,9 +46,9 @@ public class CreateAdminAccount extends javax.swing.JFrame {
             }
         });
 
-        lblEnterAdminName.setText("Enter Admin Name");
+        lblEnterAdminName.setText("Enter User Name");
 
-        lblCreateNewAdminAccount.setText("Create New Admin Account");
+        lblCreateNewAdminAccount.setText("Create New User Account");
 
         txtAdminAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -56,9 +56,9 @@ public class CreateAdminAccount extends javax.swing.JFrame {
             }
         });
 
-        lblEnterAdminAddress.setText("Enter Admin Address");
+        lblEnterAdminAddress.setText("Enter User Address");
 
-        lblEnterAdminID.setText("Enter Admin ID");
+        lblEnterAdminID.setText("Enter User ID");
 
         txtAdminID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +72,7 @@ public class CreateAdminAccount extends javax.swing.JFrame {
             }
         });
 
-        lblEnterAdminPassword.setText("Enter Admin Password");
+        lblEnterAdminPassword.setText("Enter User Password");
 
         btnEnterAdminAccount.setText("Enter Admin Account");
         btnEnterAdminAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -154,6 +154,10 @@ public class CreateAdminAccount extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         ProcessAccount();
+        
+        Forms.AdminMenu returnToMenu = new Forms.AdminMenu();
+        returnToMenu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnEnterAdminAccountActionPerformed
 
     /**
@@ -173,41 +177,41 @@ public class CreateAdminAccount extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CreateAdminAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CreateAdminAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CreateAdminAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CreateAdminAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CreateAccount.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CreateAdminAccount().setVisible(true);
+                new CreateAccount().setVisible(true);
             }
         });
     }
     
     public void ProcessAccount()
     {               
-        String newAdminID = txtAdminID.getText();
-        String newAdminPassword = txtAdminPassword.getText();
-        String newAdminName = txtAdminName.getText();
-        String newAdminAddress = txtAdminAddress.getText();
+        String newUserID = txtAdminID.getText();
+        String newUserPassword = txtAdminPassword.getText();
+        String newUserName = txtAdminName.getText();
+        String newUserAddress = txtAdminAddress.getText();
         
-        //check for valid ID
-        if((newAdminID.contains("a")) && (newAdminID.contains("%%%%")))
-        {
+        //check for valid ID starter
+        if((newUserID.contains("A")) ||(newUserID.contains("D")) || (newUserID.contains("S")))
+                {     
+                      Classes.SystemUser newAccount = new Classes.SystemUser(newUserID, newUserPassword, newUserName, newUserAddress);
             
-            Classes.SystemUser newAccount = new Classes.SystemUser(newAdminID, newAdminPassword, newAdminName, newAdminAddress);
+                      FileFunctions.AddAccount addNewAccount = new FileFunctions.AddAccount();
         
-            FileFunctions.AddAccount addNewAccount = new FileFunctions.AddAccount();
-        
-            addNewAccount.AddAccount(newAccount);
-        }
+                      addNewAccount.AddAccount(newAccount);
+                }
         //notify user of invalid ID
         else
         {

@@ -86,12 +86,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterAdminName">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enter Admin Name"/>
+        <Property name="text" type="java.lang.String" value="Enter User Name"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblCreateNewAdminAccount">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Create New Admin Account"/>
+        <Property name="text" type="java.lang.String" value="Create New User Account"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAdminAddress">
@@ -101,12 +101,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterAdminAddress">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enter Admin Address"/>
+        <Property name="text" type="java.lang.String" value="Enter User Address"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterAdminID">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enter Admin ID"/>
+        <Property name="text" type="java.lang.String" value="Enter User ID"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAdminID">
@@ -121,7 +121,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterAdminPassword">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enter Admin Password"/>
+        <Property name="text" type="java.lang.String" value="Enter User Password"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnEnterAdminAccount">
