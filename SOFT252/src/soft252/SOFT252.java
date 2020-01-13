@@ -25,8 +25,8 @@ public class SOFT252 {
        //fileReader.ReadFile();
        //fileReader.CloseFile();
        
-       
-       new Forms.Login().setVisible(true);
+       Forms.Login LoginMenu = new Forms.Login();
+       LoginMenu.setVisible(true);
       // soft252.Login newLogin = new soft252.Login();
     }
 

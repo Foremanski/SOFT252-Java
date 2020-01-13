@@ -159,7 +159,12 @@ public class Login extends javax.swing.JFrame {
         if(UserID.contains("A"))
         {
             System.out.println("admin");
-            //send user to specific admin window
+            //send user to specific admin window                      
+            Forms.AdminMenu newMenu = new Forms.AdminMenu();
+            //show new window
+            newMenu.setVisible(true);
+            //set current window to false
+            this.setVisible(false);           
         }
         else if(UserID.contains("P"))
         {
@@ -175,6 +180,11 @@ public class Login extends javax.swing.JFrame {
         {
             System.out.println("doctor");
             //send user to specific doctor window
+        }
+        
+        else
+        {
+          System.out.println("Invalid Tag, contact Admin");
         }
     }
     

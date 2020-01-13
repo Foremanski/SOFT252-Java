@@ -15,7 +15,7 @@ import java.util.*;
  */
 public class ReadFile {
     
-    private Scanner scanFile;
+    public Scanner scanFile;
     public int TotalUsers = 0;
     
     // public Classes.SystemUser[] userArray = new Classes.SystemUser[1];

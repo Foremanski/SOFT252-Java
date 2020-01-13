@@ -6,7 +6,10 @@
 package FileFunctions;
 
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.BufferedWriter;
 import java.io.PrintWriter;
+
 import java.util.ArrayList;
 /**
  *
@@ -15,26 +18,54 @@ import java.util.ArrayList;
 
 public class AddAccount {
     
-    private Scanner writeFile;
     
-    public ArrayList<Classes.SystemUser> WriteArray = new ArrayList<Classes.SystemUser>();
+    //create array list for writing
+    //public ArrayList<Classes.SystemUser> WriteArray = new ArrayList<Classes.SystemUser>();
+    //create new file reader
     public FileFunctions.ReadFile fileReader = new FileFunctions.ReadFile();
-    public Classes.SystemUser newAccount = new Classes.SystemUser();
+    
+    
     
     //get the array 
-    public void AddAccount()
-    {     
-        WriteArray = fileReader.getUserArray();
-        WriteArray.add(newAccount);
-        
-        UpdateFile();
+    public void AddAccount(Classes.SystemUser newAccount)
+    {                     
+        try{
+                FileWriter writeFile = new FileWriter("UserInformation.txt", true);
+                
+                //copy info to new array
+                //WriteArray = fileReader.getUserArray();                
+                //System.out.println(fileReader.getUserArray());
+                
+                //add the account to the list
+                //WriteArray.add(newAccount);
+                
+                UpdateFile(writeFile, newAccount);
+            }   
+        catch(Exception e){
+          System.out.println("file not found");
+        }       
     }
-    public void UpdateFile()
+    public void UpdateFile(FileWriter outputToFile, Classes.SystemUser accountOutput)
     {
-       while(fileReader.userArray.size())
-       {
+        
+        BufferedWriter bufferedWriter = new BufferedWriter(outputToFile);
+        PrintWriter printWriter = new PrintWriter(bufferedWriter);
+        
+       //for(int i = 0; i < WriteArray.size(); i++)
+       //{
+           //System.out.println(WriteArray.get(i).getUserId());
+           //System.out.println(WriteArray.size());       
+           printWriter.println(accountOutput.getUserId());
+           printWriter.println(accountOutput.getUserPassword());
+           printWriter.println(accountOutput.getUserName());
+           printWriter.println(accountOutput.getUserAddress());
            
-       }
+           
+           printWriter.flush();
+          // fileReader.scanFile.hasNext();          
+       //}
+       
+ 
        
     }
 }
