@@ -3,17 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package soft252.Classes;
+package FileFunctions;
 
 /**
  *
  * @author dforeman
  */
-public class Doctor extends SystemUser{
-    
-    public Doctor()
-    {
-        
-    }
+public class DeleteAccount {
     
 }

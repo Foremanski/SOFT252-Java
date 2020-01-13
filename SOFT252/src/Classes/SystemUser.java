@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package soft252.Classes;
+package Classes;
 
 /**
  *
@@ -44,7 +44,7 @@ public class SystemUser {
     {
         return this.userID;
     }
-    private void setUserID(String id)
+    private void setUserId(String id)
     {
         this.userID = id;
     }

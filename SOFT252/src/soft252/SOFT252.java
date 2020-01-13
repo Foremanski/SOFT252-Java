@@ -7,8 +7,6 @@ package soft252;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.*;
 
 
@@ -21,14 +19,15 @@ public class SOFT252 {
 
     public static void main (String[] args) {
         // TODO code application logic here
-       soft252.Classes.ReadFile fileReader = new soft252.Classes.ReadFile();
+       //soft252.Classes.ReadFile fileReader = new soft252.Classes.ReadFile();
         
-       fileReader.OpenFile();
-       fileReader.ReadFile();
-        
-       Login newLogin = new Login();
-        
-       newLogin.show();
+       //fileReader.OpenFile();
+       //fileReader.ReadFile();
+       //fileReader.CloseFile();
+       
+       
+       new Forms.Login().setVisible(true);
+      // soft252.Login newLogin = new soft252.Login();
     }
 
   

@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package soft252.Classes;
-
-import soft252.Classes.SystemUser;
+package Classes;
 
 /**
  *
  * @author dforeman
  */
-public class Secretary extends SystemUser {
+public class Doctor extends SystemUser{
+    
+    public Doctor()
+    {
         
-        public Secretary()
-        {
-            
-        }
+    }
+    
 }

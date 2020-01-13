@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package soft252.Classes;
+package FileFunctions;
 
 import java.io.File;
 import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -15,8 +16,11 @@ import java.util.Scanner;
 public class ReadFile {
     
     private Scanner scanFile;
+    public int TotalUsers = 0;
     
-    public soft252.Classes.SystemUser[] userArray = new soft252.Classes.SystemUser[2];
+    // public Classes.SystemUser[] userArray = new Classes.SystemUser[1];
+    public ArrayList<Classes.SystemUser> userArray = new ArrayList<Classes.SystemUser>();
+            
     
     public void OpenFile()
     {
@@ -29,26 +33,27 @@ public class ReadFile {
                   System.out.println("could not find file");
           }
         
-        ReadFile();
     }
     
-    public void ReadFile()
-    {
-        
+    public void ScanFile()
+    {      
         int i = 0;
         
         while(scanFile.hasNext())
         {
-            
-            
+            //get users and input them into variables
             String userID = scanFile.nextLine();
             String userPassword = scanFile.nextLine();
             String userName = scanFile.nextLine();
             String userAddress = scanFile.nextLine();
             
-            soft252.Classes.SystemUser userArrayInput = new soft252.Classes.SystemUser(userID, userPassword,userName, userAddress);
             
-            userArray[i] = userArrayInput;          
+            //create new object with variables
+            Classes.SystemUser userArrayInput = new Classes.SystemUser(userID, userPassword,userName, userAddress);
+            
+            
+            //adds the user to the list
+            userArray.add(userArrayInput);
             
             i++;
             //debug print
@@ -58,11 +63,15 @@ public class ReadFile {
             //System.out.println(userAddress);
                     
         }
-        closeFile();
     }
     
-    public void closeFile()
+    public void CloseFile()
     {
         scanFile.close();
+    }
+    
+    public ArrayList<Classes.SystemUser> getUserArray()
+    {
+        return this.userArray;
     }
 }
