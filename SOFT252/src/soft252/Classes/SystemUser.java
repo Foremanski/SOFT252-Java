@@ -30,9 +30,10 @@ public class SystemUser {
     }
     
     //used for the user details
-    public SystemUser(String address, String name, String id)
+    public SystemUser(String id,String password, String name, String address)
     {
         userID = id;
+        userPassword = password;
         userName = name;
         userAddress = address;            
     }

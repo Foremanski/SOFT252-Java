@@ -9,6 +9,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.*;
+
+
 
 /**
  *
@@ -18,29 +21,14 @@ public class SOFT252 {
 
     public static void main (String[] args) {
         // TODO code application logic here
-        ReadFile();
+       soft252.Classes.ReadFile fileReader = new soft252.Classes.ReadFile();
         
-        Login newLogin = new Login();
+       fileReader.OpenFile();
+       fileReader.ReadFile();
         
-        newLogin.show();
-    }
-    
-    private static void ReadFile()
-    {
-        File file = new File("C:\\Users\\dforeman\\Documents\\GitHub\\SOFT252-Java\\SOFT252\\UserInformation.txt");
-        //String Directory = System.getProperty("C:\\Users\\dforeman\\Documents\\GitHub\\SOFT252-Java");
-        //String fileName = "UserInformation.txt";
-
-        FileReader readFile = new FileReader(file);
-            
-        int i;
-        while((i = readFile.read()) != -1)
-        {
-            System.out.print((char) i);
-        }
-
+       Login newLogin = new Login();
         
-                                    
+       newLogin.show();
     }
 
   
