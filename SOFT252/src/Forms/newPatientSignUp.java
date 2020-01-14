@@ -9,44 +9,15 @@ package Forms;
  *
  * @author dforeman
  */
-public class PatientSignUp extends javax.swing.JPanel {
+import javax.swing.*;
+
+public class newPatientSignUp extends javax.swing.JFrame {
 
     /**
-     * Creates new form PatientSignUp
+     * Creates new form DoctorMenu
      */
-    public PatientSignUp() {
+    public newPatientSignUp() {
         initComponents();
-    }
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Login().setVisible(true);
-            }
-        });
     }
 
     /**
@@ -61,17 +32,19 @@ public class PatientSignUp extends javax.swing.JPanel {
         btnRequestAccount = new javax.swing.JButton();
         txtPatientPassword = new javax.swing.JTextField();
         lblEnterAdminPassword = new javax.swing.JLabel();
+        txtPatientGender = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtPatientAge = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         txtPatientAddress = new javax.swing.JTextField();
         lblEnterAdminAddress = new javax.swing.JLabel();
         txtPatientName = new javax.swing.JTextField();
         lblEnterAdminName = new javax.swing.JLabel();
-        lblCreateNewAdminAccount = new javax.swing.JLabel();
-        txtPatientAge = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        txtPatientGender = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         txtPatientID = new javax.swing.JTextField();
         lblEnterAdminName1 = new javax.swing.JLabel();
+        lblCreateNewAdminAccount = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnRequestAccount.setText("Request Account");
         btnRequestAccount.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +60,22 @@ public class PatientSignUp extends javax.swing.JPanel {
         });
 
         lblEnterAdminPassword.setText("Enter a Password");
+
+        txtPatientGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatientGenderActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Enter your Gender");
+
+        txtPatientAge.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPatientAgeActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Enter your Age");
 
         txtPatientAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,24 +93,6 @@ public class PatientSignUp extends javax.swing.JPanel {
 
         lblEnterAdminName.setText("Enter your Name");
 
-        lblCreateNewAdminAccount.setText("Create New User Account");
-
-        txtPatientAge.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPatientAgeActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Enter your Age");
-
-        txtPatientGender.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPatientGenderActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setText("Enter your Gender");
-
         txtPatientID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPatientIDActionPerformed(evt);
@@ -130,8 +101,10 @@ public class PatientSignUp extends javax.swing.JPanel {
 
         lblEnterAdminName1.setText("Enter an ID - (P####)");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        lblCreateNewAdminAccount.setText("Create New User Account");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -170,14 +143,14 @@ public class PatientSignUp extends javax.swing.JPanel {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(txtPatientGender, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))))
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(4, 4, 4)
                 .addComponent(lblCreateNewAdminAccount)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblEnterAdminName1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPatientID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,55 +178,117 @@ public class PatientSignUp extends javax.swing.JPanel {
                 .addComponent(btnRequestAccount)
                 .addContainerGap())
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRequestAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRequestAccountActionPerformed
 
-        
         CollectData();
     }//GEN-LAST:event_btnRequestAccountActionPerformed
 
-    public void CollectData()
-    {
-        
-       String patientID = txtPatientID.getText();
-       String patientRequestName = txtPatientName.getText();
-       String patientRequestAddress = txtPatientAddress.getText();
-       String patientRequestAge = txtPatientAge.getText();
-       String patientRequestGender = txtPatientGender.getText();
-       String patientRequestPassword = txtPatientGender.getText();
-       
-       Classes.SystemUser patientUser = new Classes.SystemUser(patientID, patientRequestPassword, patientRequestName, patientRequestAddress);
-       Classes.Patient patientRequest = new Classes.Patient(patientUser, patientRequestAge, patientRequestGender);
-       
-       FileFunctions.AddAccount newPatient = new FileFunctions.AddAccount();
-       
-       newPatient.AddAccount(patientRequest);
-    }
     private void txtPatientPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientPasswordActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_txtPatientPasswordActionPerformed
+
+    private void txtPatientGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientGenderActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtPatientGenderActionPerformed
+
+    private void txtPatientAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientAgeActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtPatientAgeActionPerformed
 
     private void txtPatientAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientAddressActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_txtPatientAddressActionPerformed
 
     private void txtPatientNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientNameActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_txtPatientNameActionPerformed
-
-    private void txtPatientAgeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientAgeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPatientAgeActionPerformed
-
-    private void txtPatientGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientGenderActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtPatientGenderActionPerformed
 
     private void txtPatientIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPatientIDActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_txtPatientIDActionPerformed
 
+    private void CollectData()
+    {
+        
+       String patientID = txtPatientID.getText();
+       String patientRequestPassword = txtPatientGender.getText();
+       String patientRequestName = txtPatientName.getText();
+       String patientRequestAddress = txtPatientAddress.getText();
+                   
+       String patientRequestAge = txtPatientAge.getText();
+       String patientRequestGender = txtPatientGender.getText();
+       
+       if(!patientID.contains("P"))
+       {
+           JOptionPane.showMessageDialog(new JFrame(), "INVALID ID");
+       }
+       else
+       {
+            Classes.SystemUser patientUser = new Classes.SystemUser(patientID, patientRequestPassword, patientRequestName, patientRequestAddress);
+            Classes.Patient patientRequest = new Classes.Patient(patientUser, patientRequestAge, patientRequestGender);
+       
+            FileFunctions.AddAccount newPatient = new FileFunctions.AddAccount();
+       
+            newPatient.AddAccount(patientRequest); 
+            
+            ExitWindow();
+       }       
+       
+       
+    }
+    
+    public void ExitWindow()
+    {
+        Forms.Login newLogin = new Forms.Login();
+        newLogin.setVisible(true);
+        this.setVisible(false);
+    }         
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(newPatientSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(newPatientSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(newPatientSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(newPatientSignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new newPatientSignUp().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRequestAccount;

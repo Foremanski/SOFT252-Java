@@ -5,6 +5,7 @@
  */
 package FileFunctions;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.File;
@@ -20,19 +21,22 @@ public class DeleteAccount {
        try{               
                 File tempFile = new File("tempUserInfo.txt");
          
-                PrintWriter writeFile = new PrintWriter(tempFile);
+                FileWriter writeFile = new FileWriter(tempFile);
                 
                 
-                RemoveFile(writeFile, entryToRemove);
+                RemoveFile(writeFile, entryToRemove, tempFile);
             }   
         catch(Exception e){
           System.out.println("file not found");
         }       
     }
     
-    public void RemoveFile(PrintWriter writeFile, Classes.SystemUser entryToRemove)
+    public void RemoveFile(FileWriter writeFile, Classes.SystemUser entryToRemove, File tempFile)
     {
         File inputFile = new File("UserInformation.txt");
+        
+        BufferedWriter bufferedWriter = new BufferedWriter(writeFile);
+        PrintWriter printWriter = new PrintWriter(bufferedWriter);
         
         //Classes.SystemUser entryToRemove = new Classes.SystemUser();
         FileFunctions.ReadFile array = new FileFunctions.ReadFile();
@@ -51,11 +55,21 @@ public class DeleteAccount {
             //otherwise write the current entry to new temp folder
             else
             {
-                writeFile.println(array.getUserArray().get(i).getUserId());
-                writeFile.println(array.getUserArray().get(i).getUserPassword());
-                writeFile.println(array.getUserArray().get(i).getUserName());
-                writeFile.println(array.getUserArray().get(i).getUserAddress());
+                
+                printWriter.println(array.getUserArray().get(i).getUserId());
+                printWriter.println(array.getUserArray().get(i).getUserPassword());
+                printWriter.println(array.getUserArray().get(i).getUserName());
+                printWriter.println(array.getUserArray().get(i).getUserAddress());
+                
+                if(array.getUserArray().get(i).getUserId().contains("p"))
+                {
+                    printWriter.println(array.getUserArray().get(i));
+                }
+                
+                printWriter.flush();
             }
-        }       
+        }
+        
+        tempFile.renameTo(inputFile);
     }
 }

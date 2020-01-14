@@ -115,9 +115,9 @@ public class Login extends javax.swing.JFrame {
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here:
         
-        Forms.PatientSignUp newMenu = new Forms.PatientSignUp();
-            newMenu.setVisible(true);
-            //this.setVisible(false);
+        Forms.newPatientSignUp newMenu = new Forms.newPatientSignUp();
+        newMenu.setVisible(true);
+        //this.setVisible(false);
     }//GEN-LAST:event_btnSignUpActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
@@ -174,11 +174,18 @@ public class Login extends javax.swing.JFrame {
         {
             System.out.println("patient");
             //send user to specific patient window
+            Forms.PatientMenu newMenu = new Forms.PatientMenu();
+            newMenu.setVisible(true);
+            this.setVisible(false);
         }
         else if(UserID.contains("S"))
         {
             System.out.println("secretary");
             //send user to specific secretary window
+            Forms.SecretaryMenu newMenu = new Forms.SecretaryMenu();
+            newMenu.setVisible(true);
+            this.setVisible(false);
+            
         }
         else if(UserID.contains("D"))
         {

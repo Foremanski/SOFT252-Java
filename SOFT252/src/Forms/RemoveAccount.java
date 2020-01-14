@@ -20,31 +20,32 @@ public class RemoveAccount extends javax.swing.JFrame {
     public RemoveAccount() {
         initComponents();
         
+        
         listHandler();
     }
     
+
     public void listHandler()
     {
-        //start listhadne
-        JList listGUI;
-        Classes.SystemUser listOfUsers = new Classes.SystemUser();
         FileFunctions.ReadFile array = new FileFunctions.ReadFile();
-        listDisplay.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-      
-        
         array.OpenFile();
         array.ScanFile();
         array.CloseFile();
-        String[] stringArray = new String[array.getUserArray().size()];                    
+        
+        //start listhandler       
+        String[] stringArray = new String[array.getUserArray().size()];
+        listDisplay.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+      
+        
+        
+                            
         
         DefaultListModel dlm = new DefaultListModel();
         
         //read in data from file array to string array
         for(int i = 0; i < array.getUserArray().size(); i++)
-        {
-            
-             stringArray[i] = array.getUserArray().get(i).getUserName();
-             
+        {      
+             stringArray[i] = array.getUserArray().get(i).getUserName();            
         }
         //read in data from string to list
         for(int x = 0; x < array.getUserArray().size(); x++)
@@ -145,8 +146,18 @@ public class RemoveAccount extends javax.swing.JFrame {
     private void btnRemoveAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveAccountActionPerformed
         // TODO add your handling code here:
         
+        FileFunctions.ReadFile array = new FileFunctions.ReadFile();  
+        array.OpenFile();
+        array.ScanFile();
+        array.CloseFile();
+        
+        
         Classes.SystemUser accountToRemove = new Classes.SystemUser();
         FileFunctions.DeleteAccount removeAccount = new FileFunctions.DeleteAccount();
+        
+        int i = listDisplay.getSelectedIndex();
+        
+        accountToRemove = array.getUserArray().get(i);
         
         //get the selected 
        // accountToRemove = listDisplay.getSelectedValue()
@@ -188,14 +199,9 @@ public class RemoveAccount extends javax.swing.JFrame {
             }
         });
         
-        DisplayUsers();
-        
+             
     }
-    
-    public static void DisplayUsers()
-    {
-        
-    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackToMenu;

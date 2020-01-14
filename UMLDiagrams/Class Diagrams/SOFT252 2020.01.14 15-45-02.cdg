@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="SOFT252">
+  <ClassDiagramComponents>
+    <Class name="Admin" package="Classes" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Doctor" package="Classes" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="Patient" package="Classes" visibility="public" xPosition="540.0" yPosition="20.0">
+      <Fields>
+        <Field name="userGender" type="String" visibility="package"/>
+        <Field name="userAge" type="String" visibility="package"/>
+        <Field name="userDetails" type="SystemUser" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="SystemUser" name="user"/>
+          <Argument type="String" name="age"/>
+          <Argument type="String" name="gender"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUser" returnType="SystemUser" visibility="public"/>
+        <Method name="setUser" returnType="void" visibility="private">
+          <Argument type="SystemUser" name="user"/>
+        </Method>
+        <Method name="getGender" returnType="String" visibility="public"/>
+        <Method name="SetGender" returnType="void" visibility="private">
+          <Argument type="String" name="gender"/>
+        </Method>
+        <Method name="getAge" returnType="String" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="private">
+          <Argument type="String" name="age"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Secretary" package="Classes" visibility="public" isAbstract="true" xPosition="920.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="SystemUser" package="Classes" visibility="public" xPosition="1040.0" yPosition="264.0">
+      <Fields>
+        <Field name="userID" type="String" visibility="package"/>
+        <Field name="userName" type="String" visibility="package"/>
+        <Field name="userPassword" type="String" visibility="package"/>
+        <Field name="userAddress" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="id"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="id"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="address"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getUserId" returnType="String" visibility="public"/>
+        <Method name="setUserId" returnType="void" visibility="private">
+          <Argument type="String" name="id"/>
+        </Method>
+        <Method name="getUserName" returnType="String" visibility="public"/>
+        <Method name="setUserName" returnType="void" visibility="private">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getUserAddress" returnType="String" visibility="public"/>
+        <Method name="setUserAddress" returnType="void" visibility="private">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getUserPassword" returnType="String" visibility="public"/>
+        <Method name="setUserPassword" returnType="void" visibility="private">
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AddAccount" package="FileFunctions" visibility="public" xPosition="1146.0" yPosition="20.0">
+      <Fields>
+        <Field name="fileReader" type="FileFunctions.ReadFile" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="AddAccount" returnType="void" visibility="public">
+          <Argument type="Classes.SystemUser" name="newAccount"/>
+        </Method>
+        <Method name="UpdateFile" returnType="void" visibility="public">
+          <Argument type="FileWriter" name="outputToFile"/>
+          <Argument type="Classes.SystemUser" name="accountOutput"/>
+        </Method>
+        <Method name="AddAccount" returnType="void" visibility="public">
+          <Argument type="Classes.Patient" name="newAccount"/>
+        </Method>
+        <Method name="UpdateFile" returnType="void" visibility="public">
+          <Argument type="FileWriter" name="outputToFile"/>
+          <Argument type="Classes.Patient" name="accountOutput"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DeleteAccount" package="FileFunctions" visibility="public" xPosition="1646.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="ReadTempFile" returnType="void" visibility="public">
+          <Argument type="Classes.SystemUser" name="entryToRemove"/>
+        </Method>
+        <Method name="RemoveFile" returnType="void" visibility="public">
+          <Argument type="FileWriter" name="writeFile"/>
+          <Argument type="Classes.SystemUser" name="entryToRemove"/>
+          <Argument type="File" name="tempFile"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ReadFile" package="FileFunctions" visibility="public" xPosition="1747.0" yPosition="244.0">
+      <Fields>
+        <Field name="scanFile" type="Scanner" visibility="public"/>
+        <Field name="TotalUsers" type="int" visibility="public"/>
+        <Field name="userArray" type="ArrayList&lt;Classes.SystemUser&gt;" visibility="public"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="OpenFile" returnType="void" visibility="public"/>
+        <Method name="ScanFile" returnType="void" visibility="public"/>
+        <Method name="CloseFile" returnType="void" visibility="public"/>
+        <Method name="getUserArray" returnType="ArrayList&lt;Classes.SystemUser&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="AdminMenu" package="Forms" visibility="public" xPosition="-72.0" yPosition="306.0">
+      <Fields>
+        <Field name="btnCreateAccount" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnLogOut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRemoveAccount" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblAdminMenu" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnCreateAccountActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnRemoveAccountActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnLogOutActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="CreateAccount" package="Forms" visibility="public" xPosition="213.0" yPosition="980.0">
+      <Fields>
+        <Field name="btnEnterAccount" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lblCreateNewAdminAccount" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminAddress" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminID" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminName" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminPassword" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtEnterAddress" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtEnterID" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtEnterName" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtEnterPassword" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="txtEnterIDActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtEnterPasswordActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtEnterNameActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtEnterAddressActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnEnterAccountActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="ProcessAccount" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DoctorMenu" package="Forms" visibility="public" xPosition="909.0" yPosition="980.0">
+      <Fields>
+        <Field name="btnLogOut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnLogOutActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Login" package="Forms" visibility="public" xPosition="709.0" yPosition="593.0">
+      <Fields>
+        <Field name="EnterUserID" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="EnterUserPassword" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="btnLogin" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnSignUp" type="javax.swing.JButton" visibility="private"/>
+        <Field name="lblLogin" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblUserID" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblUserPassword" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnSignUpActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnLoginActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="checkRole" returnType="void" visibility="public">
+          <Argument type="String" name="UserID"/>
+        </Method>
+        <Method name="EnterUserPasswordActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="EnterUserIDActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="newPatientSignUp" package="Forms" visibility="public" xPosition="1558.0" yPosition="559.0">
+      <Fields>
+        <Field name="btnRequestAccount" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblCreateNewAdminAccount" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminAddress" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminName" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminName1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="lblEnterAdminPassword" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="txtPatientAddress" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtPatientAge" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtPatientGender" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtPatientID" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtPatientName" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtPatientPassword" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnRequestAccountActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtPatientPasswordActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtPatientGenderActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtPatientAgeActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtPatientAddressActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtPatientNameActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="txtPatientIDActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="CollectData" returnType="void" visibility="private"/>
+        <Method name="ExitWindow" returnType="void" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PatientMenu" package="Forms" visibility="public" xPosition="2071.0" yPosition="244.0">
+      <Fields>
+        <Field name="btnLogOut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnLogOutActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RemoveAccount" package="Forms" visibility="public" xPosition="2275.0" yPosition="509.0">
+      <Fields>
+        <Field name="btnBackToMenu" type="javax.swing.JButton" visibility="private"/>
+        <Field name="btnRemoveAccount" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="listDisplay" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="listScrollDisplay" type="javax.swing.JScrollPane" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="listHandler" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnBackToMenuActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="btnRemoveAccountActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SecretaryMenu" package="Forms" visibility="public" xPosition="1205.0" yPosition="1187.0">
+      <Fields>
+        <Field name="btnLogOut" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="btnLogOutActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SOFT252" package="soft252" visibility="public" xPosition="746.0" yPosition="441.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Observable" package="Interface" visibility="public" xPosition="8.0" yPosition="782.0">
+      <Methods>
+        <Method name="registerObserver" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="removeObserver" returnType="void" visibility="public">
+          <Argument type="Observer" name="observer"/>
+        </Method>
+        <Method name="notifyObservers" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="Observer" package="Interface" visibility="public" xPosition="320.0" yPosition="820.0">
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="Classes.Patient" name="patientRequest"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Classes.Admin" target="Classes.SystemUser"/>
+    <IsRelation name="is" source="Classes.Doctor" target="Classes.SystemUser"/>
+    <UseRelation source="FileFunctions.AddAccount" target="Classes.SystemUser" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Interface.Observable" target="Interface.Observer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Classes.Patient" target="Classes.SystemUser"/>
+    <UseRelation source="Interface.Observer" target="Classes.Patient" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Classes.Secretary" target="Classes.SystemUser"/>
+    <HasRelation name="userDetails" source="Classes.Patient" target="Classes.SystemUser" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="FileFunctions.DeleteAccount" target="Classes.SystemUser" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="FileFunctions.AddAccount" target="Classes.Patient" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Classes.Patient" target="Classes.SystemUser" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="FileFunctions.ReadFile" target="Classes.SystemUser" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

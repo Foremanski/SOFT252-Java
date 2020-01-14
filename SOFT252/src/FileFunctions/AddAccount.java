@@ -50,11 +50,7 @@ public class AddAccount {
         
         BufferedWriter bufferedWriter = new BufferedWriter(outputToFile);
         PrintWriter printWriter = new PrintWriter(bufferedWriter);
-        
-       //for(int i = 0; i < WriteArray.size(); i++)
-       //{
-           //System.out.println(WriteArray.get(i).getUserId());
-           //System.out.println(WriteArray.size());       
+              
            printWriter.println(accountOutput.getUserId());
            printWriter.println(accountOutput.getUserPassword());
            printWriter.println(accountOutput.getUserName());
@@ -62,8 +58,8 @@ public class AddAccount {
            
            
            printWriter.flush();
-          // fileReader.scanFile.hasNext();          
-       //}             
+        
+           
     }
     
     public void AddAccount(Classes.Patient newAccount)
@@ -94,10 +90,10 @@ public class AddAccount {
        //{
            //System.out.println(WriteArray.get(i).getUserId());
            //System.out.println(WriteArray.size());       
-           printWriter.println(accountOutput.getUserId());
-           printWriter.println(accountOutput.getUserPassword());
-           printWriter.println(accountOutput.getUserName());
-           printWriter.println(accountOutput.getUserAddress());
+           printWriter.println(accountOutput.getUser().getUserId());
+           printWriter.println(accountOutput.getUser().getUserPassword());
+           printWriter.println(accountOutput.getUser().getUserName());
+           printWriter.println(accountOutput.getUser().getUserAddress());
            printWriter.println(accountOutput.getAge());
            printWriter.println(accountOutput.getGender());
            

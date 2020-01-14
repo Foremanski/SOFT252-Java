@@ -9,7 +9,7 @@ package Classes;
  *
  * @author dforeman
  */
-public class Patient extends SystemUser{
+public class Patient extends SystemUser {
     
     String userGender;
     String userAge;

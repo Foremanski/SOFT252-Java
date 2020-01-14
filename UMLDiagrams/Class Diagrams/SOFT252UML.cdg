@@ -12,7 +12,7 @@
         <Method name="untitledMethod" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Doctor" package="" visibility="public" xPosition="740.0" yPosition="362.0">
+    <Class name="Doctor" package="" visibility="public" xPosition="806.0" yPosition="374.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -40,7 +40,7 @@
       <Methods>
         <Method name="orderMedicine" returnType="void" visibility="public"/>
         <Method name="decideAccountRequest" returnType="void" visibility="public"/>
-        <Method name="updateSecretary" returnType="void" visibility="public">
+        <Method name="updateSecretary" returnType="int" visibility="public">
           <Argument type="int" name="newRequest"/>
         </Method>
       </Methods>
@@ -68,8 +68,9 @@
     </Class>
     <Class name="potentialAccount" package="" visibility="public" xPosition="18.0" yPosition="540.0">
       <Fields>
-        <Field name="potentialPatientName" type="Object" visibility="private"/>
-        <Field name="potentialPatientAddress" type="Object" visibility="private"/>
+        <Field name="potentialSystemUser" type="Object" visibility="private"/>
+        <Field name="potentialPatientAge" type="Object" visibility="private"/>
+        <Field name="untitledField" type="Object" visibility="private"/>
       </Fields>
       <Constructors/>
       <Methods>
@@ -126,7 +127,7 @@
       <Methods>
         <Method name="acceptAccountRequest" returnType="void" visibility="public"/>
         <Method name="denyAccountRequest" returnType="void" visibility="public"/>
-        <Method name="update" returnType="void" visibility="public">
+        <Method name="update" returnType="potentialAccount" visibility="public">
           <Argument type="potentialAccount" name="Request"/>
         </Method>
       </Methods>
@@ -159,24 +160,24 @@
     </Interface>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <IsRelation name="is" source="Doctor" target="SystemUser"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patient" target="giveFeedback"/>
-    <IsRelation name="is" source="Administrator" target="SystemUser"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Secretary" target="decideAccountRequest"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Doctor Feedback" target="giveFeedback"/>
-    <IsRelation name="is" source="Patient" target="SystemUser"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patient" target="ReadRatings"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="SystemUser" target="Login"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Doctor" target="ReadRatings"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Prescription" target="PrescribeMedicine"/>
-    <IsRelation name="is" source="Secretary" target="SystemUser"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="potentialAccount" target="accountRequest"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Secretary" target="OrderMedicine"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Administrator" target="EditDoctorSecretary"/>
-    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Administrator" target="ReadRatings"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Doctor" target="ReadRatings"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Medicine" target="CreateMedicine"/>
+    <IsRelation name="is" source="Administrator" target="SystemUser"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patient" target="accountRequest"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Doctor Feedback" target="giveFeedback"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Doctor" target="CreateMedicine"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patient" target="giveFeedback"/>
     <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Doctor" target="PrescribeMedicine"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Patient" target="ReadRatings"/>
+    <IsRelation name="is" source="Patient" target="SystemUser"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Administrator" target="ReadRatings"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Administrator" target="EditDoctorSecretary"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="SystemUser" target="Login"/>
+    <IsRelation name="is" source="Doctor" target="SystemUser"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="potentialAccount" target="accountRequest"/>
+    <IsRelation name="is" source="Secretary" target="SystemUser"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Secretary" target="OrderMedicine"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Secretary" target="decideAccountRequest"/>
   </ClassDiagramRelations>
 </ClassDiagram>
