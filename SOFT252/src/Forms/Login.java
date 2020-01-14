@@ -154,7 +154,7 @@ public class Login extends javax.swing.JFrame {
     public void checkRole(String UserID)
     {
         System.out.println("checkRole");
-        
+        //Strategy Pattern: seperate User into 4 different forms doing differnt functions
         //check if admin
         if(UserID.contains("A"))
         {

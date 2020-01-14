@@ -4,20 +4,51 @@
  * and open the template in the editor.
  */
 package Forms;
-
+import java.awt.*;
+import java.awt.event.*; 
+import javax.swing.*;
+import javax.swing.event.*;
 /**
  *
  * @author dforeman
  */
 public class RemoveAccount extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form RemoveAccount
      */
     public RemoveAccount() {
         initComponents();
+        
+        JList listGUI;
+        Classes.SystemUser listOfUsers = new Classes.SystemUser();
+        FileFunctions.ReadFile array = new FileFunctions.ReadFile();
+        listDisplay.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+      
+        
+        array.OpenFile();
+        array.ScanFile();
+        array.CloseFile();
+        String[] stringArray = new String[array.getUserArray().size()];                    
+        
+        DefaultListModel dlm = new DefaultListModel();
+        
+        //read in data from file array to string array
+        for(int i = 0; i < array.getUserArray().size(); i++)
+        {
+            
+             stringArray[i] = array.getUserArray().get(i).getUserName();
+             
+        }
+        //read in data from string to list
+        for(int x = 0; x < array.getUserArray().size(); x++)
+        {
+            dlm.addElement(stringArray[x]);
+        }
+        
     }
-
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,38 +58,32 @@ public class RemoveAccount extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        listScrollDisplaySec = new javax.swing.JScrollPane();
-        listDisplaySec = new javax.swing.JList<>();
+        listScrollDisplay = new javax.swing.JScrollPane();
+        listDisplay = new javax.swing.JList<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        listScrollDisplayDoc = new javax.swing.JScrollPane();
-        listDisplayDoc = new javax.swing.JList<>();
-        jLabel3 = new javax.swing.JLabel();
-        listScrollDisplayAdmin = new javax.swing.JScrollPane();
-        listDisplayAdmin = new javax.swing.JList<>();
-        jLabel4 = new javax.swing.JLabel();
         btnBackToMenu = new javax.swing.JButton();
+        btnRemoveAccount = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        listScrollDisplaySec.setViewportView(listDisplaySec);
+        listScrollDisplay.setViewportView(listDisplay);
 
         jLabel1.setText("Remove an Account");
 
-        jLabel2.setText("Secretary Accounts");
-
-        listScrollDisplayDoc.setViewportView(listDisplayDoc);
-
-        jLabel3.setText("Doctor Accounts");
-
-        listScrollDisplayAdmin.setViewportView(listDisplayAdmin);
-
-        jLabel4.setText("Doctor Accounts");
+        jLabel2.setText("All Accounts");
 
         btnBackToMenu.setText("Back To Menu");
         btnBackToMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackToMenuActionPerformed(evt);
+            }
+        });
+
+        btnRemoveAccount.setText("Remove Selected Account");
+        btnRemoveAccount.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoveAccountActionPerformed(evt);
             }
         });
 
@@ -73,17 +98,14 @@ public class RemoveAccount extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(listScrollDisplaySec, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(listScrollDisplayDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(listScrollDisplayAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBackToMenu)))
-                .addContainerGap(44, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnBackToMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnRemoveAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(listScrollDisplay, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,18 +115,12 @@ public class RemoveAccount extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listScrollDisplaySec, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listScrollDisplayAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(listScrollDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listScrollDisplayDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnBackToMenu)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnBackToMenu)
+                    .addComponent(btnRemoveAccount))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -117,6 +133,18 @@ public class RemoveAccount extends javax.swing.JFrame {
         backToMenu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackToMenuActionPerformed
+
+    private void btnRemoveAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveAccountActionPerformed
+        // TODO add your handling code here:
+        
+        Classes.SystemUser accountToRemove = new Classes.SystemUser();
+        FileFunctions.DeleteAccount removeAccount = new FileFunctions.DeleteAccount();
+        
+        //get the selected 
+       // accountToRemove = listDisplay.getSelectedValue()
+        
+        removeAccount.ReadTempFile(accountToRemove);
+    }//GEN-LAST:event_btnRemoveAccountActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,15 +191,10 @@ public class RemoveAccount extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBackToMenu;
+    private javax.swing.JButton btnRemoveAccount;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JList<String> listDisplayAdmin;
-    private javax.swing.JList<String> listDisplayDoc;
-    private javax.swing.JList<String> listDisplaySec;
-    private javax.swing.JScrollPane listScrollDisplayAdmin;
-    private javax.swing.JScrollPane listScrollDisplayDoc;
-    private javax.swing.JScrollPane listScrollDisplaySec;
+    private javax.swing.JList<String> listDisplay;
+    private javax.swing.JScrollPane listScrollDisplay;
     // End of variables declaration//GEN-END:variables
 }
