@@ -29,21 +29,21 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtAdminName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEnterName" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblEnterAdminName" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblCreateNewAdminAccount" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtAdminAddress" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEnterAddress" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblEnterAdminAddress" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="lblEnterAdminID" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtAdminID" alignment="0" max="32767" attributes="0"/>
-                              <Component id="txtAdminPassword" pref="172" max="32767" attributes="0"/>
+                              <Component id="txtEnterID" alignment="0" max="32767" attributes="0"/>
+                              <Component id="txtEnterPassword" pref="172" max="32767" attributes="0"/>
                           </Group>
                           <Component id="lblEnterAdminPassword" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                      <Component id="btnEnterAdminAccount" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEnterAccount" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="19" max="32767" attributes="0"/>
@@ -58,30 +58,30 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="lblEnterAdminID" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="txtAdminID" min="-2" max="-2" attributes="0"/>
+              <Component id="txtEnterID" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblEnterAdminPassword" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="txtAdminPassword" min="-2" max="-2" attributes="0"/>
+              <Component id="txtEnterPassword" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblEnterAdminName" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="txtAdminName" min="-2" max="-2" attributes="0"/>
+              <Component id="txtEnterName" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblEnterAdminAddress" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="txtAdminAddress" min="-2" max="-2" attributes="0"/>
+              <Component id="txtEnterAddress" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="btnEnterAdminAccount" min="-2" max="-2" attributes="0"/>
+              <Component id="btnEnterAccount" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="20" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JTextField" name="txtAdminName">
+    <Component class="javax.swing.JTextField" name="txtEnterName">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAdminNameActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnterNameActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterAdminName">
@@ -94,9 +94,9 @@
         <Property name="text" type="java.lang.String" value="Create New User Account"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminAddress">
+    <Component class="javax.swing.JTextField" name="txtEnterAddress">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAdminAddressActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnterAddressActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterAdminAddress">
@@ -109,14 +109,14 @@
         <Property name="text" type="java.lang.String" value="Enter User ID"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminID">
+    <Component class="javax.swing.JTextField" name="txtEnterID">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAdminIDActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnterIDActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtAdminPassword">
+    <Component class="javax.swing.JTextField" name="txtEnterPassword">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAdminPasswordActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEnterPasswordActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblEnterAdminPassword">
@@ -124,12 +124,12 @@
         <Property name="text" type="java.lang.String" value="Enter User Password"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEnterAdminAccount">
+    <Component class="javax.swing.JButton" name="btnEnterAccount">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enter Admin Account"/>
+        <Property name="text" type="java.lang.String" value="Enter New Account"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnterAdminAccountActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEnterAccountActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

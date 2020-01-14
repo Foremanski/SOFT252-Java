@@ -12,16 +12,17 @@ package Classes;
 public class Patient extends SystemUser{
     
     String userGender;
-    int userAge;
+    String userAge;
     SystemUser userDetails;
     
     
     //constuctors
-    public Patient(SystemUser user, String gender, int age)
+    public Patient(SystemUser user, String age, String gender)
     {       
         userDetails = user;
-        userGender = gender;
         userAge = age;
+        userGender = gender;
+        
     }
     
     //getters and setters;
@@ -46,11 +47,11 @@ public class Patient extends SystemUser{
     }
     
     //get and set Age
-    public int getAge()
+    public String getAge()
     {
         return this.userAge;
     }
-    private void setAge(int age)
+    private void setAge(String age)
     {
         this.userAge = age;
     }

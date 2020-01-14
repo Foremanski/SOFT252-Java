@@ -20,6 +20,12 @@ public class RemoveAccount extends javax.swing.JFrame {
     public RemoveAccount() {
         initComponents();
         
+        listHandler();
+    }
+    
+    public void listHandler()
+    {
+        //start listhadne
         JList listGUI;
         Classes.SystemUser listOfUsers = new Classes.SystemUser();
         FileFunctions.ReadFile array = new FileFunctions.ReadFile();
@@ -43,11 +49,13 @@ public class RemoveAccount extends javax.swing.JFrame {
         //read in data from string to list
         for(int x = 0; x < array.getUserArray().size(); x++)
         {
+            //insert the array of names into the dlm model
             dlm.addElement(stringArray[x]);
         }
         
+        //set the dlm model as the list name
+        listDisplay.setModel(dlm);
     }
-    
     
     /**
      * This method is called from within the constructor to initialize the form.

@@ -48,12 +48,26 @@ public class ReadFile {
             String userAddress = scanFile.nextLine();
             
             
+            
             //create new object with variables
             Classes.SystemUser userArrayInput = new Classes.SystemUser(userID, userPassword,userName, userAddress);
             
+            //checks if user is patient
+            if(userID.contains("P"))
+            {
+                String userAge = scanFile.nextLine();
+                String userGender = scanFile.nextLine();
+                Classes.Patient patientArrayInput = new Classes.Patient(userArrayInput, userAge, userGender);
+                userArray.add(patientArrayInput);
+            }
             
-            //adds the user to the list
-            userArray.add(userArrayInput);
+            //if not, upload the default 
+            else 
+            {
+                  //adds the user to the list
+                  userArray.add(userArrayInput);
+            }
+            
             
             i++;
             //debug print

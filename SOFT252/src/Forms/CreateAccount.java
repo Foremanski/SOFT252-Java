@@ -27,22 +27,22 @@ public class CreateAccount extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtAdminName = new javax.swing.JTextField();
+        txtEnterName = new javax.swing.JTextField();
         lblEnterAdminName = new javax.swing.JLabel();
         lblCreateNewAdminAccount = new javax.swing.JLabel();
-        txtAdminAddress = new javax.swing.JTextField();
+        txtEnterAddress = new javax.swing.JTextField();
         lblEnterAdminAddress = new javax.swing.JLabel();
         lblEnterAdminID = new javax.swing.JLabel();
-        txtAdminID = new javax.swing.JTextField();
-        txtAdminPassword = new javax.swing.JTextField();
+        txtEnterID = new javax.swing.JTextField();
+        txtEnterPassword = new javax.swing.JTextField();
         lblEnterAdminPassword = new javax.swing.JLabel();
-        btnEnterAdminAccount = new javax.swing.JButton();
+        btnEnterAccount = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtAdminName.addActionListener(new java.awt.event.ActionListener() {
+        txtEnterName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAdminNameActionPerformed(evt);
+                txtEnterNameActionPerformed(evt);
             }
         });
 
@@ -50,9 +50,9 @@ public class CreateAccount extends javax.swing.JFrame {
 
         lblCreateNewAdminAccount.setText("Create New User Account");
 
-        txtAdminAddress.addActionListener(new java.awt.event.ActionListener() {
+        txtEnterAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAdminAddressActionPerformed(evt);
+                txtEnterAddressActionPerformed(evt);
             }
         });
 
@@ -60,24 +60,24 @@ public class CreateAccount extends javax.swing.JFrame {
 
         lblEnterAdminID.setText("Enter User ID");
 
-        txtAdminID.addActionListener(new java.awt.event.ActionListener() {
+        txtEnterID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAdminIDActionPerformed(evt);
+                txtEnterIDActionPerformed(evt);
             }
         });
 
-        txtAdminPassword.addActionListener(new java.awt.event.ActionListener() {
+        txtEnterPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAdminPasswordActionPerformed(evt);
+                txtEnterPasswordActionPerformed(evt);
             }
         });
 
         lblEnterAdminPassword.setText("Enter User Password");
 
-        btnEnterAdminAccount.setText("Enter Admin Account");
-        btnEnterAdminAccount.addActionListener(new java.awt.event.ActionListener() {
+        btnEnterAccount.setText("Enter New Account");
+        btnEnterAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEnterAdminAccountActionPerformed(evt);
+                btnEnterAccountActionPerformed(evt);
             }
         });
 
@@ -91,18 +91,18 @@ public class CreateAccount extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtAdminName)
+                                .addComponent(txtEnterName)
                                 .addComponent(lblEnterAdminName)
                                 .addComponent(lblCreateNewAdminAccount)
-                                .addComponent(txtAdminAddress)
+                                .addComponent(txtEnterAddress)
                                 .addComponent(lblEnterAdminAddress)
                                 .addComponent(lblEnterAdminID)
-                                .addComponent(txtAdminID)
-                                .addComponent(txtAdminPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
+                                .addComponent(txtEnterID)
+                                .addComponent(txtEnterPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE))
                             .addComponent(lblEnterAdminPassword)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(btnEnterAdminAccount)))
+                        .addComponent(btnEnterAccount)))
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -113,44 +113,44 @@ public class CreateAccount extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(lblEnterAdminID)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAdminID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEnterID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblEnterAdminPassword)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAdminPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEnterPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblEnterAdminName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAdminName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEnterName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblEnterAdminAddress)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtAdminAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtEnterAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEnterAdminAccount)
+                .addComponent(btnEnterAccount)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtAdminIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdminIDActionPerformed
+    private void txtEnterIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnterIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAdminIDActionPerformed
+    }//GEN-LAST:event_txtEnterIDActionPerformed
 
-    private void txtAdminPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdminPasswordActionPerformed
+    private void txtEnterPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnterPasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAdminPasswordActionPerformed
+    }//GEN-LAST:event_txtEnterPasswordActionPerformed
 
-    private void txtAdminNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdminNameActionPerformed
+    private void txtEnterNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnterNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAdminNameActionPerformed
+    }//GEN-LAST:event_txtEnterNameActionPerformed
 
-    private void txtAdminAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAdminAddressActionPerformed
+    private void txtEnterAddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEnterAddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAdminAddressActionPerformed
+    }//GEN-LAST:event_txtEnterAddressActionPerformed
 
-    private void btnEnterAdminAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterAdminAccountActionPerformed
+    private void btnEnterAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterAccountActionPerformed
         // TODO add your handling code here:
         
         ProcessAccount();
@@ -158,7 +158,7 @@ public class CreateAccount extends javax.swing.JFrame {
         Forms.AdminMenu returnToMenu = new Forms.AdminMenu();
         returnToMenu.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_btnEnterAdminAccountActionPerformed
+    }//GEN-LAST:event_btnEnterAccountActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,10 +198,10 @@ public class CreateAccount extends javax.swing.JFrame {
     
     public void ProcessAccount()
     {               
-        String newUserID = txtAdminID.getText();
-        String newUserPassword = txtAdminPassword.getText();
-        String newUserName = txtAdminName.getText();
-        String newUserAddress = txtAdminAddress.getText();
+        String newUserID = txtEnterID.getText();
+        String newUserPassword = txtEnterPassword.getText();
+        String newUserName = txtEnterName.getText();
+        String newUserAddress = txtEnterAddress.getText();
         
         //check for valid ID starter
         if((newUserID.contains("A")) ||(newUserID.contains("D")) || (newUserID.contains("S")))
@@ -222,15 +222,15 @@ public class CreateAccount extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEnterAdminAccount;
+    private javax.swing.JButton btnEnterAccount;
     private javax.swing.JLabel lblCreateNewAdminAccount;
     private javax.swing.JLabel lblEnterAdminAddress;
     private javax.swing.JLabel lblEnterAdminID;
     private javax.swing.JLabel lblEnterAdminName;
     private javax.swing.JLabel lblEnterAdminPassword;
-    private javax.swing.JTextField txtAdminAddress;
-    private javax.swing.JTextField txtAdminID;
-    private javax.swing.JTextField txtAdminName;
-    private javax.swing.JTextField txtAdminPassword;
+    private javax.swing.JTextField txtEnterAddress;
+    private javax.swing.JTextField txtEnterID;
+    private javax.swing.JTextField txtEnterName;
+    private javax.swing.JTextField txtEnterPassword;
     // End of variables declaration//GEN-END:variables
 }
